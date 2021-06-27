@@ -1,20 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, Button, Alert } from 'react-native';
 
 export default function App() {
-  const handlePress = () => console.log('text pressed');
-
+  const handleClick = () => Alert.alert('Woah!', 'Are you sure you want to see cringe?', [
+    { text: 'Yes', onPress: () => console.log('Yes') },
+    { text: 'No', onPress: () => console.log('No') },
+  ]);
   return (
     <SafeAreaView style={styles.container}>
-      <Text onPress={handlePress}>Hello World!</Text>
-      {/* <Image source={require('./assets/favicon.png')} /> */}
-      <Image source={{
-        width: 200,
-        height: 300,
-        uri: 'https://picsum.photos/200/300'
-      }} />
-      <StatusBar style="auto" />
+      <Button
+        color='red'
+        title='click me for cringe' onPress={handleClick} />
     </SafeAreaView>
   );
 }
