@@ -1,26 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, SafeAreaView, Button, Alert } from 'react-native';
+import { StyleSheet, SafeAreaView, StatusBar, Platform, View, Dimensions, Text } from 'react-native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
-  const handleClick = () => Alert.alert('Woah!', 'Are you sure you want to see cringe?', [
-    { text: 'Yes', onPress: () => console.log('Yes') },
-    { text: 'No', onPress: () => console.log('No') },
-  ]);
-  return (
-    <SafeAreaView style={styles.container}>
-      <Button
-        color='red'
-        title='click me for cringe' onPress={handleClick} />
-    </SafeAreaView>
-  );
+
+  return <WelcomeScreen />;
+
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
